@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:login_screens/constants/colors.dart';
 import 'package:login_screens/screens/mail_id_screen.dart';
-//import 'package:login_screens/constants/colors.dart';
+import 'package:login_screens/screens/welcome_screen.dart';
+
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -49,11 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 child: TextField(
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.mail_outline),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(16)),
+                    prefixIcon: Icon(
+                      Icons.mail_outline,
+                      color: Colors.white,
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(16)),
                     ),
                     labelText: 'Email',
@@ -74,13 +75,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: TextField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.lock_outline_rounded),
+                    prefixIcon: Icon(
+                      Icons.lock_outline_rounded,
+                      color: Colors.white,
+                    ),
                     border: OutlineInputBorder(
-                      borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(16),
-                        topRight: Radius.circular(16),
-                        bottomLeft: Radius.circular(16),
-                        bottomRight: Radius.circular(16),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(16),
                       ),
                     ),
                     labelText: 'Password',
@@ -114,7 +115,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: TextButton(
-                  onPressed: () {},
+                   onPressed: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WelcomeScreen(),
+                ),
+              ),
                   child: Text(
                     'Login',
                     style: GoogleFonts.josefinSans(
