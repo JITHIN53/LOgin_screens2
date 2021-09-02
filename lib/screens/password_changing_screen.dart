@@ -19,22 +19,44 @@ class _PasswordChangingScreenState extends State<PasswordChangingScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 60, bottom: 10),
-              child: Stack(
-                alignment: Alignment.topCenter,
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(top: 40),
-                    child: Image.asset(
-                      'assets/images/Ellipse 56.jpg',
-                      height: 180,
-                      width: 180,
+              child: Container(
+                height: 200,width: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Colors.black,
+                  ),
+                ),
+                child: Stack(
+                  children: [
+                    Positioned(top: 0,bottom: 0,left: 0,right: 0,
+                      child: IconButton(
+                        icon: Icon(
+                          Icons.person,color: AppColors.violet3,size: 60,
+                        ),onPressed: (){},
+                      ),
                     ),
-                  ),
-                  ClipRRect(
-                    child: Image.asset('assets/images/Group 345.jpg',
-                        height: 70, width: 70),
-                  ),
-                ],
+                    Positioned(
+                      bottom: 1.0,
+                      right: 1.0,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: AppColors.violet3
+                        ),
+                        child: IconButton(
+                          icon: Icon(
+                            Icons.arrow_upward,
+                            color: Colors.white,
+                            size: 30,
+                          ),
+                          onPressed: () {},
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               // child: Image.asset('assets/images/Ellipse 56.jpg',height: 200,width: 200,),
             ),
@@ -51,7 +73,7 @@ class _PasswordChangingScreenState extends State<PasswordChangingScreen> {
                 child: TextField(
                   decoration: InputDecoration(
                     prefixIcon: Icon(
-                      Icons.account_circle_outlined,
+                      Icons.person,
                       color: AppColors.violet3,
                     ),
                     border: OutlineInputBorder(
